@@ -1,0 +1,782 @@
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-subtle);
+  margin-bottom: 2.5rem;
+}
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* 1 column on tablets + phones */
+@media (max-width: 900px) {
+  .skill-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* card container */
+.skill-card.fancy {
+  background: var(--card-bg);
+  border-radius: 1.1rem;
+  padding: 1.5rem 1.7rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-card.fancy:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+  border-color: rgba(129, 140, 248, 0.7);
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.skill-card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+}
+
+.skill-card-text {
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+  margin-bottom: 0.9rem;
+}
+
+/* pill row */
+.skill-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+}
+/* individual pill */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: var(--bg-main);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  font-size: 0.8rem;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.skill-icon {
+  font-size: 1rem;
+}
+
+/* etc… same idea for projects, timeline, contact */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+.project-tag {
+  background: var(--accent-soft);
+  color: var(--accent-text, var(--accent));
+}
+/* special style for SOFT skills (no logo) */
+.soft-skill-pill {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== EXPERIENCE TIMELINE ===== */
+
+.exp-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+/* vertical line */
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--card-border);
+}
+
+/* each card */
+.exp-card {
+  position: relative;
+  padding-left: 3rem;
+}
+
+/* circle marker */
+.exp-marker {
+  position: absolute;
+  left: 7px;
+  top: 0.9rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+/* card content */
+.exp-content {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem 1.6rem;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exp-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.exp-company {
+  font-size: 0.95rem;
+  color: var(--text-subtle);
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.exp-time {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+}
+
+.exp-type-pill {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.exp-summary {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.9;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.exp-list {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.exp-list li {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+/* mobile tweaks */
+@media (max-width: 640px) {
+  .exp-timeline::before {
+    left: 10px;
+  }
+  .exp-card {
+    padding-left: 2.4rem;
+  }
+  .exp-marker {
+    left: 3px;
+  }
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .exp-meta {
+    align-items: flex-start;
+  }
+}
+/* ===== PROJECTS GRID ===== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  border-color: rgba(129, 140, 248, 0.7);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.project-role {
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+  margin-top: 0.15rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.project-tag {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+/* buttons */
+.project-actions {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  text-decoration: none;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  padding: 0.6rem 1.2rem; /* Adjust padding to reduce button size */
+  border-radius: 12px; /* Soft rounded corners */
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  background: transparent;
+  width: auto; /* Allow button to resize based on content */
+  text-align: center; /* Center text within button */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25); /* Softer hover effect */
+}
+.project-btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.contact-section {
+  padding: 6rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.contact-subtitle {
+  color: var(--text-subtle);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- FORM STYLING ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-label {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(34,197,94,0.08);
+}
+
+.contact-textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+/* ---------- BUTTON ---------- */
+.contact-button {
+  padding: 0.9rem 1.6rem;
+  width: fit-content;
+  border-radius: 12px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(34,197,94,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(34,197,94,0.35);
+}
+
+/* ---------- LINKS ---------- */
+.contact-links {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.contact-links a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- LIGHT THEME TWEAKS ---------- */
+:root[data-theme="light"] .contact-input,
+:root[data-theme="light"] .contact-textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d1d5db;
+  color: #0f172a;
+}
+
+:root[data-theme="light"] .contact-input:focus,
+:root[data-theme="light"] .contact-textarea:focus {
+  background: white;
+  border-color: #22c55e;
+}
+
+/* Timeline Marker */
+.exp-marker {
+  position: absolute;
+  left: 7px;
+  top: 0.9rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+/* Add this to your CSS file (e.g., src/Components/Education.css) */
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-logo {
+  width: 40px; /* Adjust size as per the logo */
+  height: auto;
+  object-fit: contain;
+}
+
+.exp-content {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem 1.6rem;
+}
+
+/* Rest of the styles */
+
+@media (max-width: 768px) {
+  .exp-timeline {
+    gap: 1.8rem;
+  }
+
+  .exp-timeline::before {
+    left: 10px;
+  }
+
+  .education-card {
+    padding-left: 2.4rem;
+  }
+
+  .exp-marker {
+    left: 3px;
+  }
+
+  .education-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/* Add this to your CSS file (e.g., src/Components/Education.css) */
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem; /* Small gap between degree title and university name */
+}
+
+.exp-company-wrapper {
+  display: flex;
+  align-items: center; /* Ensure university name and logo are aligned */
+  gap: 0.8rem; /* Adjust spacing between name and logo */
+}
+
+.exp-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 50px; /* Adjust logo size */
+}
+
+.exp-logo {
+  width: 100%; /* Make the logo responsive */
+  object-fit: contain;
+  height: auto;
+}
+
+.exp-content {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem 1.6rem;
+}
+
+/* Other section styles */
+
+/* Other section styles */
+
+
+/* Dark Mode Specific Adjustments */
+:root[data-theme="dark"] .education-section {
+  background: transparent; /* Allow stars to show through */
+  position: relative;
+  z-index: 2; /* Make sure the education section content stays above stars */
+}
+
+
+/* ===== ABOUT SECTION ===== */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+/* title + subtitle + pills */
+.about-header {
+  max-width: 720px;
+}
+
+/* pill row under subtitle */
+.about-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.about-pill {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(15, 23, 42, 0.06); /* dark mode */
+  color: var(--text-subtle);
+  backdrop-filter: blur(10px);
+}
+
+/* tweak pills in dark/light automatically */
+:root[data-theme="dark"] .about-pill {
+  background: rgba(15, 23, 42, 0.7);
+}
+:root[data-theme="light"] .about-pill {
+  background: rgba(248, 250, 252, 0.9);
+}
+
+/* two cards side by side */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+  gap: 1.6rem;
+}
+
+/* card styling reusing your design tokens */
+.about-card {
+  background: var(--card-bg);
+  border-radius: 1.1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 1.6rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle accent bar on top of each card */
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 197, 94, 0.9),
+    rgba(59, 130, 246, 0.6)
+  );
+  opacity: 0.85;
+}
+
+/* text inside cards */
+.about-card-title {
+  margin-top: 0.9rem;  /* push below colored bar */
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.about-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6rem;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+.about-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.6rem;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+/* responsive: stack cards on mobile */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== GLOBAL ACCENT BAR FOR ALL CARDS ===== */
+
+.skill-card.fancy,
+.project-card,
+.exp-content {
+  position: relative;
+  overflow: hidden;   /* ensures bar stays inside */
+}
+
+/* top accent strip */
+.skill-card.fancy::before,
+.project-card::before,
+.exp-content::before,
+.education-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px; /* thickness of the strip */
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 197, 94, 0.9),
+    rgba(59, 130, 246, 0.7)
+  );
+  opacity: 0.85;
+  pointer-events: none;
+}
+/* Footer Section Styles */
+.footer {
+  background: var(--bg-main);
+  color: var(--text-main);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Footer text styles */
+.footer-info {
+  margin-bottom: 1.5rem;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+  margin: 0;
+  opacity: 0.8;
+}
+
+.footer-text a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Social links */
+.footer-social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover {
+  transform: translateY(-3px);
+  color: var(--accent-dark);
+}
+
+/* Hover effects for social links */
+.footer-link:hover {
+  color: #22c55e;
+}
+
+/* Light Theme */
+:root[data-theme="light"] .footer {
+  background: #f9fafb;
+
+}
+
+:root[data-theme="light"] .footer-text {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .footer-link {
+  color: #22c55e;
+}
