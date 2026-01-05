@@ -1,7 +1,7 @@
 // src/Components/Education.jsx
 import { motion } from "framer-motion";
-import universityLogo1 from '../assets/Concordia_univ_montreal_textlogo.png'; // Example logo
-import universityLogo2 from '../assets/Gtu_logo.png'; // Example logo
+import universityLogo1 from '../assets/Concordia_univ_montreal_textlogo.png'; 
+import universityLogo2 from '../assets/GTU_logo.png'; 
 
 const education = [
   {
